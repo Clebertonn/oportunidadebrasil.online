@@ -1,0 +1,610 @@
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+
+      $.ajax({
+        url: "https://geolocation-db.com/jsonp",
+        jsonpCallback: "callback",
+        dataType: "jsonp",
+        success: function (location) {
+          var data = new Date(),
+            dia = data.getDate().toString().padStart(2, '0'),
+            mes = (data.getMonth() + 1).toString().padStart(2, '0'), //+1 pois no getMonth Janeiro começa com zero.
+            ano = data.getFullYear();
+          
+          data = dia + '/' + mes + '/' + ano;
+
+          //AQUI altera o texto ANTES do nome da cidade
+          textoAntesCidade = 'Você e algumas pessoas próximo a ';
+          //AQUI altera o texto DEPOIS do nome da cidade
+          textoDepoisCidade = ' foram selecionadas para ver este vídeo até o dia ';
+
+          mostrarData = true; //SE não quiser que a data apareça é só mudar o valor 'true' para 'false' e vice-versa para mostrar novamente 
+          
+          if(location.city)
+            $('#container-cidade').html(textoAntesCidade + location.city + textoDepoisCidade + (mostrarData ? data : ''));
+        }
+      });
+
+  </script>
+  <style> 
+    #container-cidade {
+      padding: 1rem;
+      width: 100%;
+      /* AQUI altera a cor de fundo da caixa */
+      background-color: #000000;
+      /* AQUI altera a cor da letra */
+      color: #FFFFFF;
+      display: inline-table;
+      /* AQUI altera o tamanho da letra */
+      font-size: 15px;
+      /* AQUI altera a altura da caixa */
+      height: 13px;
+      z-index: 1;
+      position: inherit;
+      top: 0;
+      left: 0;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      text-align: center;
+    }
+  </style>
+
+  </head>
+
+    <div id="container-cidade">Aguarde um momento... </div>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Dosis:wght@200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/com.css">
+
+    <!-- Título da Página -->
+    <title>Dominando o Colesterol</title>
+    
+    <style type="text/css">
+      body {
+        color: white;
+        background-image: url("assets/img/bg.jpg");
+        background-color: rgba(0, 0, 0, 0.6);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        background-blend-mode: darken;
+      }
+    </style>
+
+  </head>
+  <body>
+    
+    <header class="py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <!-- Imagem Ultrasecreto -->
+            <img class="img-fluid" src="./assets/img/ultrasecreto.svg">
+
+            <!-- Headline -->
+            <h3 class="my-4"><b>Suco de 3 Ingredientes Elimina Todo Colesterol Ruim</b></h3>
+
+            <!-- VSL -->
+            <div id="vid_6298077fd60fab000a7af38c" style="position:relative;width:100%;padding: 56.25% 0 0;"><img id="thumb_6298077fd60fab000a7af38c" src="https://images.converteai.net/23858ec6-6880-4584-ae02-5263b600ebf1/players/6298077fd60fab000a7af38c/thumbnail.jpg" alt="vsl" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_6298077fd60fab000a7af38c" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_6298077fd60fab000a7af38c">var s=document.createElement("script");s.src="https://scripts.converteai.net/23858ec6-6880-4584-ae02-5263b600ebf1/players/6298077fd60fab000a7af38c/player.js",s.async=!0,document.head.appendChild(s);</script>
+
+            <!-- Botão -->
+            <div id="cta1" class="mt-4 d-none">
+              <a href="https://pay.kiwify.com.br/uSvUVcd" class="a-btn" style="text-decoration: none;">
+                <span class="span-btn">QUERO OBTER ACESSO!</span>
+                <span class="span-btn2">(atenção: vagas limitadas)</span>
+              </a>
+            </div>
+
+            <!-- Termos de Uso e Política de Privacidade -->
+            <div class="text-white mt-4"><a href="termos.html" class="text-white">Termos de Uso</a> | <a href="privacidade.html" class="text-white">Política de Privacidade</a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <script type="text/javascript">
+      setTimeout(() => {document.getElementById("cta1").classList.remove("d-none")}, 460000); // temporização da Call to Action (em milissegundos)
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="./assets/js/com.js"></script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+
+   <link rel="stylesheet" href="">
+
+   <!-- estilo -->
+
+<style>
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+
+.custom-social-proof {
+
+  display:none;
+
+visibility: visible;
+
+  position: fixed;
+
+  bottom: 20px;
+
+  left: 20px;
+
+  z-index: 9999999999999 !important;
+
+  font-family: "Open Sans", sans-serif;
+
+}
+
+.custom-social-proof .custom-notification {
+
+  width: 300px;
+
+  
+
+  border: 0;
+
+  text-align: left;
+
+  z-index: 99999;
+
+  box-sizing: border-box;
+
+  font-weight: 400;
+
+  border-radius: 6px;
+
+  box-shadow: 2px 2px 10px 2px rgba(11, 10, 10, 0.2);
+
+  background-color: #ffffff;
+
+  position: relative;
+
+  cursor: pointer;
+
+}
+
+.custom-social-proof .custom-notification .custom-notification-container {
+
+  display: flex !important;
+
+  align-items: center;
+
+  height: 85px;
+
+}
+
+.custom-social-proof .custom-notification .custom-notification-container .custom-notification-image-wrapper img {
+
+  max-height: 80px;
+
+  width: 80px;
+
+  overflow: hidden;
+
+  border-radius: 6px 0 0 6px;
+
+  object-fit: cover;
+
+  
+
+}
+
+.custom-social-proof .custom-notification .custom-notification-container .custom-notification-content-wrapper {
+
+  margin: 0;
+
+  height: 100%;
+
+  color: gray;
+
+  padding-left: 20px;
+
+  padding-right: 20px;
+
+  border-radius: 0 6px 6px 0;
+
+  flex: 1;
+
+  display: flex !important;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+}
+
+.custom-social-proof .custom-notification .custom-notification-container .custom-notification-content-wrapper .custom-notification-content {
+
+  font-family: inherit !important;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  font-size: 14px;
+
+  line-height: 16px;
+
+}
+
+.custom-social-proof .custom-notification .custom-notification-container .custom-notification-content-wrapper .custom-notification-content small {
+
+  margin-top: 2.5px !important;
+
+  display: block !important;
+
+  font-size: 12px !important;
+
+  opacity: 0.8;
+
+}
+
+.custom-social-proof .custom-notification .custom-close {
+
+  position: absolute;
+
+  top: 8px;
+
+  right: 8px;
+
+  height: 12px;
+
+  width: 12px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease-in-out;
+
+  transform: rotate(45deg);
+
+  opacity: 0;
+
+}
+
+.custom-social-proof .custom-notification .custom-close::before {
+
+  content: "";
+
+  display: block;
+
+  width: 100%;
+
+  height: 2px;
+
+  background-color: gray;
+
+  position: absolute;
+
+  left: 0;
+
+  top: 5px;
+
+}
+
+.custom-social-proof .custom-notification .custom-close::after {
+
+  content: "";
+
+  display: block;
+
+  height: 100%;
+
+  width: 2px;
+
+  background-color: gray;
+
+  position: absolute;
+
+  left: 5px;
+
+  top: 0;
+
+}
+
+.custom-social-proof .custom-notification:hover .custom-close {
+
+  opacity: 1;
+
+}
+
+ 
+
+.min{
+
+font-weight:bold;
+
+color:#878787;
+
+}
+
+ 
+
+ 
+
+#nome {
+
+ 
+
+color:#000;
+
+font-weight:bold;
+
+font-size:13px !important;
+
+line-height:22px;
+
+position:relative; }
+
+ 
+
+</style>
+
+</head>
+
+<body>
+
+<!-- partial:index.partial.html -->
+
+<!DOCTYPE html>
+
+ 
+
+<html lang="en">
+
+ 
+
+ 
+
+<head>
+
+<meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>NOTIFY</title>
+
+<link rel="stylesheet" href="style.css"/>
+
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"  >
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="script.js"></script>
+
+</head>
+
+<body>
+
+ 
+
+<section  id="minhaDiv" class="custom-social-proof">
+
+    <div class="custom-notification">
+
+      <div class="custom-notification-container">
+
+        <div class="custom-notification-image-wrapper">
+
+          <img src="https://icones.pro/wp-content/uploads/2021/02/google-icone-symbole-logo-png.png" style=" position:relative; left:10px; width: 50px; height: 50px"/>
+
+</div>
+
+        <div class="custom-notification-content-wrapper">
+
+          <p class="custom-notification-content">
+
+          <span id="nome">Luíza Souza</span><strong class="min" > avaliou:</strong></br><span id="avaliar">estou muito satisfeito com o produto.</span></span></br>
+
+          
+
+            <small>
+
+            
+
+                 <span style="color:#ffd43b;" ><i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i></span>&nbsp; &nbsp;  <i style="color: #008069; position:relative; margin-top:2px;  float:right;" class="fa fa-check-circle"> Tempo real</i>
+
+            </small>
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <div onclick="Mudarestado('minhaDiv')"  class="custom-close"></div>
+
+    </div>
+
+  </section>
+
+</body>
+
+</html>
+
+<!-- partial -->
+
+  
+
+<script type="text/javascript">
+
+// Lista de nomes da avaliacão
+
+// apenas precisa adicionar o nome entre as aspas
+
+// para adicionar mais nomes, so copiar a linha abaixo sem os //
+
+// r_nome[proximo numero da sequencia] = "nome";
+
+ 
+
+var r_nome = new Array ();
+
+r_nome[0] = "José da S.";
+
+r_nome[1] = "Maria do carmo P.";
+
+r_nome[2] = "João de Deus";
+
+r_nome[3] = "Juliana P.";
+
+r_nome[5] = "Bruno Cruz";
+
+r_nome[4] = "Geovane dos santos ";
+
+r_nome[6] = "Steven univer.";
+
+r_nome[7] = "Jhonas da silva";
+
+r_nome[8] = "Gustavo M.";
+
+r_nome[9] = "Gabriel nunes T.";
+
+r_nome[10] = "Eslovenia Silva P.";
+
+r_nome[11] = "Jackson P. Si.";
+
+r_nome[12] = "Marcos T. P.";
+
+r_nome[13] = "Titó E. T";
+
+r_nome[14] = "Emma frank";
+
+r_nome[15] = "Anna star.";
+
+r_nome[16] = "Anne stack.";
+
+r_nome[17] = "Esther P .M";
+
+r_nome[18] = "Alessandra antu.";
+
+r_nome[19] = "Moises do carmo.";
+
+r_nome[20] = "Jhonas Nunes";
+
+ 
+
+ 
+
+// fim dos nomes
+
+ 
+
+ 
+
+ 
+
+// inicio das mensagens
+
+// edite as mensagens sempre escrevendo entre as aspas ""
+
+ 
+
+ 
+
+var r_product = new Array ();
+
+r_product[1] = "Funciona melhor que estatina, acredite!";
+
+r_product[2] = "o melhor atendimento possível.";
+
+r_product[3] = "A melhor parte é que não precisei deixar de comer o que gosto.";
+
+r_product[4] = "Já estou com o colesterol estabilizado, literalmente dominei rsrs.";
+
+r_product[5] = "Nota 10, muito perfeito.";
+
+r_product[6] = "estou muito feliz.";
+
+r_product[7] = "Fiz um ótimo negocio comprando com vocês.";
+
+r_product[8] = "Achei que não era real, estou muito feliz com o programa.";
+
+r_product[9] = "Paguei pelo pix e o acesso bem rápido.";
+
+r_product[10] = "Amei!.";
+
+ 
+
+ 
+
+ 
+
+setInterval(function(){ $(".custom-social-proof").slideToggle('slow'); }, 8000);
+
+      
+
+      
+
+  function Mudarestado(el) {
+
+  var display = document.getElementById(el).style.visibility;
+
+  if(display == "hidden")
+
+  document.getElementById(el).style.visibility = 'visible';
+
+  else
+
+  document.getElementById(el).style.visibility = 'hidden';
+
+  }
+
+          
+
+       setInterval(function(){    
+
+        
+
+         
+
+ 
+
+          $('#avaliar').text(r_product[Math.floor((Math.random() * 10) + 1)]);
+
+          $('#nome').text(r_nome[Math.floor((Math.random() * 20) + 1)]);
+
+          
+
+ 
+
+   
+
+     //console.log(timeVal);
+
+}, 16500);
+
+ 
+
+ 
+
+ 
+
+</script>
+
+</body>
+
+</html>
